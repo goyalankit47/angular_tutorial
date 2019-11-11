@@ -1,0 +1,23 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Login to dashboard</mat-card-title>
+        </mat-card-header>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput placeholder="Username" formControlName="username">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <input type="password" matInput placeholder="Password" formControlName="password">
+                </mat-form-field>
+                <p *ngIf="invalidCredentialsMessage" class="error">
+                    {{ invalidCredentialsMessage }}
+                </p>
+                <button mat-stroked-button>Login</button>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>

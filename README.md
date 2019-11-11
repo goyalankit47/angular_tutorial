@@ -1,14 +1,23 @@
-# App
+# AngularDemoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
+## System Requirements
+--> Node.js must be installed.
+--> @angular/cli must be installed. (Run `npm i -g @angular/cli` to install it)
 
-## Development server
+## Setting App Locally
+--> clone the repository
+--> change current working directory to cloned directory
+--> run npm i
+--> run ng serve --open
+--> navigate to `http://localhost:4200`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technology Used
+--> Angular 8
+--> Angular Material Design
+--> Angular Flex Layout
+--> Angular Bootstrap
+--> Bootstrap 4
+--> Ngx-charts
 
 ## Build
 

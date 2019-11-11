@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>DASHBOARD</span>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/login">Logout</a>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="m-3">
+    <mat-card-header>
+        <mat-card-title> Power Profile </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="row chart">
+            <ngx-charts-line-chart [scheme]="colorScheme" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis"
+                [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" legendPosition="right"
+                [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+                [legendTitle]="legendTitle" [autoScale]="autoScale" (select)="onSelect($event)">
+            </ngx-charts-line-chart>
+        </div>
+    </mat-card-content>
+</mat-card>
+<div fxLayout="row" fxLayoutGap="30px" class="m-3">
+    <div fxFlex="30%">
+        <mat-card class="text-center">
+            <mat-card-content>
+                <h3>{{ current_solar_power }}</h3>
+                <h3>kW</h3>
+                <h6>Solar Power</h6>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="30%">
+        <mat-card class="text-center">
+            <mat-card-content>
+                <h3>{{ current_load_power }}</h3>
+                <h3>kW</h3>
+                <h6>Load Power</h6>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="40%">
+        <mat-card class="text-center">
+            <mat-card-content>
+                <h3 class="progress_bar">{{ current_battery_percentage }}%</h3>
+                <h3 class="progress_bar"><ngb-progressbar type="info" [value]="current_battery_percentage" [striped]="true"></ngb-progressbar></h3>
+                <h6>Battery State of Charge (SOC)</h6>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
