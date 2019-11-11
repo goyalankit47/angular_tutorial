@@ -1,23 +1,23 @@
 # AngularDemoApp
 
 ## System Requirements
---> Node.js must be installed.
---> @angular/cli must be installed. (Run `npm i -g @angular/cli` to install it)
+1. Node.js must be installed.
+2. @angular/cli must be installed. (Run `npm i -g @angular/cli` to install it)
 
 ## Setting App Locally
---> clone the repository
---> change current working directory to cloned directory
---> run npm i
---> run ng serve --open
---> navigate to `http://localhost:4200`
+1. clone the repository
+2. change current working directory to cloned directory
+3. run npm i
+4. run ng serve --open
+5. navigate to `http://localhost:4200`
 
 ## Technology Used
---> Angular 8
---> Angular Material Design
---> Angular Flex Layout
---> Angular Bootstrap
---> Bootstrap 4
---> Ngx-charts
+- Angular 8
+- Angular Material Design
+- Angular Flex Layout
+- Angular Bootstrap
+- Bootstrap 4
+- Ngx-charts
 
 ## Build
 
