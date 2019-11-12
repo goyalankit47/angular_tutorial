@@ -37,6 +37,14 @@ export class DashboardComponent implements OnInit {
       data.chartData.subscribe((res) => { this.formatChartData(res.graph_value) });
       data.boxData.subscribe((res) => { this.current_battery_percentage = res.value });
     }
+    this.multi = [{
+      "name": "Load Active Power",
+      "series": []
+    },
+    {
+      "name": "Solar Power",
+      "series": []
+    }];
   }
 
   ngOnInit() {
@@ -54,16 +62,11 @@ export class DashboardComponent implements OnInit {
   }
 
   formatChartData(data) {
-    let obj = [{
-      "name": "Load Active Power",
-      "series": []
-    },
-    {
-      "name": "Solar Power",
-      "series": []
-    }];
-    this.loadData = data[0].values;
-    this.solarData = data[1].values;
+    let obj = JSON.parse(JSON.stringify(this.multi));
+    if(data[0].values)
+    	this.loadData = data[0].values;
+    if(data[1].values)
+    	this.solarData = data[1].values;
     for (let i = 0; i < data[0]["values"].length; i++) {
       obj[0].series.push(
         { name: this.formatDate(this.loadData[i].timestamp), value: this.formatValues(this.loadData[i].value) }
@@ -78,7 +81,9 @@ export class DashboardComponent implements OnInit {
   }
 
   formatValues(values) {
-    return parseFloat((values / 1000).toFixed(3));
+  	if(values >= 1000)
+    	values = values / 1000;
+    return parseFloat((values).toFixed(3));
   }
 
   formatDate(date) {
