@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.value.username === 'application' && this.form.value.password === 'test') {
+    if (this.form.value.username === 'application' && this.form.value.password === 'demo') {
       this._authService.authStatus = true;
       this.invalidCredentialsMessage = null;
       this._router.navigate(['/dashboard']);

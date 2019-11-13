@@ -10,6 +10,7 @@
 3. run `npm i`
 4. run `ng serve --open`
 5. navigate to `http://localhost:4200`
+6. username is `application` and password is `demo`
 
 ## Technology Used
 - Angular 8
