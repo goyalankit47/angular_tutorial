@@ -6,9 +6,20 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-card class="m-3">
-    <mat-card-header>
-        <mat-card-title> Power Profile </mat-card-title>
+<mat-card class="m-3 pt-0">
+    <mat-card-header class="justify-content-center">
+        <mat-card-title>
+            <div fxLayout="row">
+                <mat-button-toggle-group [(value)] = "selected_value" #group="matButtonToggleGroup">
+                    <mat-button-toggle class = "border_bottom" *ngFor="let items of toggleOptions" [ngClass]= "{'selected':items === selected_value}" [value]="items" aria-label="Text align center" (change)="selectionChanged($event)">
+                    {{items}}
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div fxLayout="row" class="justify-content-center mt-3">
+                <h5> Power Profile </h5>
+            </div>
+        </mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <div class="row chart">
@@ -43,7 +54,10 @@
         <mat-card class="text-center">
             <mat-card-content>
                 <h3 class="progress_bar">{{ current_battery_percentage }}%</h3>
-                <h3 class="progress_bar"><ngb-progressbar type="info" [value]="current_battery_percentage" [striped]="true"></ngb-progressbar></h3>
+                <h3 class="progress_bar">
+                    <ngb-progressbar type="info" [value]="current_battery_percentage" [striped]="true">
+                    </ngb-progressbar>
+                </h3>
                 <h6>Battery State of Charge (SOC)</h6>
             </mat-card-content>
         </mat-card>

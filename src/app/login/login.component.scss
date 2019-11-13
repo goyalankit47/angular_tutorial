@@ -33,6 +33,9 @@
     font-size: 10px;
     transform: scale(1.5);
   }
+  .mat-stroked-button:focus {
+    outline: 0 !important;
+  }
   .error {
     padding: 16px 0px 16px 0px;
     width: 100%;

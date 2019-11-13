@@ -1,4 +1,4 @@
-# AngularDemoApp
+# solar_load_power
 
 ## System Requirements
 1. Node.js must be installed.
@@ -6,9 +6,9 @@
 
 ## Setting App Locally
 1. clone the repository
-2. change current working directory to cloned directory
-3. run npm i
-4. run ng serve --open
+2. cd `solar_load_power`
+3. run `npm i`
+4. run `ng serve --open`
 5. navigate to `http://localhost:4200`
 
 ## Technology Used

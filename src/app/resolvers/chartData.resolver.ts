@@ -10,9 +10,10 @@ export class ChartDataResolver implements Resolve<any> {
     }
 
     resolve(): any {
-        let chartData = this._httpClient.getChartData();
+        let minChartData = this._httpClient.getMinuteChartData();
+        let hourChartData = this._httpClient.getHourChartData();
         let boxData = this._httpClient.getBoxData();
-        let data = {chartData, boxData}
+        let data = {minChartData, hourChartData, boxData}
         return data;
     }
 }
